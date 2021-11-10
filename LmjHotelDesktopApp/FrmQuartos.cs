@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
 {
-    public partial class Form1 : Form
+    public partial class FrmQuartos : Form
     {
-        public Form1()
+        public FrmQuartos()
         {
             InitializeComponent();
         }
