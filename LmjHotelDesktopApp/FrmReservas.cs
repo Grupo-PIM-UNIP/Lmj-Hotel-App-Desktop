@@ -45,6 +45,11 @@ namespace LmjHotelDesktopApp
             }
         }
 
+        private void btnListarReservasAtivas_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void DefinirColunasDataGrid()
         {
             dataGridListagemReservas.Columns.Add("DataInicio", "Início");

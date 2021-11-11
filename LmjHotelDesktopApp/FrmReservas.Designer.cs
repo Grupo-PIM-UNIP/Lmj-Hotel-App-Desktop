@@ -65,6 +65,7 @@
             this.btnListarReservasAtivas.TabIndex = 2;
             this.btnListarReservasAtivas.Text = "Consultar reservas  com hospedagem ativa";
             this.btnListarReservasAtivas.UseVisualStyleBackColor = false;
+            this.btnListarReservasAtivas.Click += new System.EventHandler(this.btnListarReservasAtivas_Click);
             // 
             // groupBoxListagemReservas
             // 
