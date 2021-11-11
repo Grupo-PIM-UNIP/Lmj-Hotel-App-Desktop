@@ -31,8 +31,7 @@ namespace LmjHotelDesktopApp
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quartosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reservaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripConsultarReservas = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripConsultarQuartos = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,23 +54,17 @@ namespace LmjHotelDesktopApp
             // quartosToolStripMenuItem
             // 
             this.quartosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reservaToolStripMenuItem1,
-            this.consultarToolStripMenuItem});
+            this.toolStripConsultarReservas});
             this.quartosToolStripMenuItem.Name = "quartosToolStripMenuItem";
             this.quartosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.quartosToolStripMenuItem.Text = "Reservas";
             // 
-            // reservaToolStripMenuItem1
+            // toolStripConsultarReservas
             // 
-            this.reservaToolStripMenuItem1.Name = "reservaToolStripMenuItem1";
-            this.reservaToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.reservaToolStripMenuItem1.Text = "Solicitar";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.toolStripConsultarReservas.Name = "toolStripConsultarReservas";
+            this.toolStripConsultarReservas.Size = new System.Drawing.Size(180, 22);
+            this.toolStripConsultarReservas.Text = "Consultar";
+            this.toolStripConsultarReservas.Click += new System.EventHandler(this.toolStripConsultarReservas_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -84,9 +77,9 @@ namespace LmjHotelDesktopApp
             // ToolStripConsultarQuartos
             // 
             this.ToolStripConsultarQuartos.Name = "ToolStripConsultarQuartos";
-            this.ToolStripConsultarQuartos.Size = new System.Drawing.Size(125, 22);
+            this.ToolStripConsultarQuartos.Size = new System.Drawing.Size(180, 22);
             this.ToolStripConsultarQuartos.Text = "Consultar";
-            this.ToolStripConsultarQuartos.Click += new System.EventHandler(this.ListarQuartosDisponiveis);
+            this.ToolStripConsultarQuartos.Click += new System.EventHandler(this.toolStripConsultarQuartos_Click);
             // 
             // sairToolStripMenuItem1
             // 
@@ -133,8 +126,7 @@ namespace LmjHotelDesktopApp
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem quartosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripConsultarReservas;
         private System.Windows.Forms.ToolStripMenuItem ToolStripConsultarQuartos;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;
         private System.Windows.Forms.Label label1;

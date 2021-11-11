@@ -18,16 +18,21 @@ namespace LmjHotelDesktopApp
             InitializeComponent();
         }
 
-        private void ListarQuartosDisponiveis(object sender, EventArgs e)
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void toolStripConsultarQuartos_Click(object sender, EventArgs e)
         {
             var frmQuartos = new FrmQuartos();
             frmQuartos.SetQuartoService(new QuartoService());
             frmQuartos.ShowDialog();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        private void toolStripConsultarReservas_Click(object sender, EventArgs e)
         {
-
+            var frmReservas = new FrmReservas();
+            frmReservas.ShowDialog();
         }
     }
 }
