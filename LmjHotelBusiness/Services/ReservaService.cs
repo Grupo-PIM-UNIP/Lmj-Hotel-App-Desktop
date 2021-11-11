@@ -13,5 +13,10 @@ namespace LmjHotelBusiness.Services
         {
             return reservaDao.ListarTodasReservas();
         }
+
+        public List<Reserva> ListaReservasAtivas()
+        {
+            return reservaDao.ListarReservasAtivas();
+        }
     }
 }

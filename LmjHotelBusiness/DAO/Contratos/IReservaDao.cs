@@ -6,5 +6,6 @@ namespace LmjHotelBusiness.DAO.Contratos
     public interface IReservaDao
     {
         List<Reserva> ListarTodasReservas();
+        List<Reserva> ListarReservasAtivas();
     }
 }

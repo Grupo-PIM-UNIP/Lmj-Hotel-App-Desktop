@@ -37,17 +37,36 @@ namespace LmjHotelDesktopApp
 
         private void btnListarTodasReservas_Click(object sender, EventArgs e)
         {
-            if (dataGridListagemReservas.Rows.Count == 0)
-            {
-                DefinirColunasDataGrid();
-                var reservas = _reservaService.ListaTodasReservas();
-                DefinirLinhasDataGrid(reservas);
-            }
+            var reservas = _reservaService.ListaTodasReservas();
+            MontarListagemNoDateGridView(reservas);
         }
 
         private void btnListarReservasAtivas_Click(object sender, EventArgs e)
         {
+            var reservas = _reservaService.ListaReservasAtivas();
+            MontarListagemNoDateGridView(reservas);
+        }
 
+        private void MontarListagemNoDateGridView(List<Reserva> reservas)
+        {
+            var dataGridVazio = VerificarSeDataGridEstaVazio();
+            if (!dataGridVazio)
+            {
+                dataGridListagemReservas.Columns.Clear();
+                dataGridListagemReservas.Rows.Clear();
+            }
+
+            DefinirColunasDataGrid();
+            DefinirLinhasDataGrid(reservas);
+        }
+
+        private bool VerificarSeDataGridEstaVazio()
+        {
+            if (dataGridListagemReservas.Rows.Count == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void DefinirColunasDataGrid()
@@ -61,15 +80,15 @@ namespace LmjHotelDesktopApp
             DataGridViewColumn[] colunas = new DataGridViewColumn[] { dataGridListagemReservas.Columns[3] };
             RegularColunaDataGrid(colunas);
         }
-        
+
         private void RegularColunaDataGrid(DataGridViewColumn[] colunas)
         {
-            for (int i=0; i<colunas.Length; i++)
+            for (int i = 0; i < colunas.Length; i++)
             {
                 colunas[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
-        } 
- 
+        }
+
 
         private void DefinirLinhasDataGrid(List<Reserva> reservas)
         {

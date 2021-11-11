@@ -21,11 +21,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
 
         public List<Reserva> ListarTodasReservas()
         {
-            var reservas = new List<Reserva>();
-            SqlCommand comandoSql = null;
-            SqlDataReader leitorDeDados = null;
-
-            string querySql = "SELECT " +
+            string querySql = " SELECT " +
                               " Tb_Quarto.Id AS IdQuarto, Tb_Quarto.Numero AS Quarto, " +
                               " Tb_Hospede.Id AS IdHospede, Tb_Hospede.Nome AS Nome, " +
                               " Tb_Hospede.Sobrenome AS Sobrenome, Tb_Hospede.Telefone AS Fone, " +
@@ -33,6 +29,35 @@ namespace LmjHotelBusiness.DAO.Implementacoes
                               " FROM Tb_Reserva " +
                               " INNER JOIN Tb_Hospede ON Tb_Reserva.HospedeId = Tb_Hospede.Id " +
                               " INNER JOIN Tb_Quarto ON Tb_Reserva.QuartoId = Tb_Quarto.Id";
+            
+            var reservas = ListarReservas(querySql);
+            return reservas;
+        }
+
+        public List<Reserva> ListarReservasAtivas()
+        {
+            string querySql = " SELECT " +
+                              " Tb_Quarto.Id AS IdQuarto, Tb_Quarto.Numero AS Quarto, " +
+                              " Tb_Hospede.Id AS IdHospede, Tb_Hospede.Nome AS Nome, " +
+                              " Tb_Hospede.Sobrenome AS Sobrenome, Tb_Hospede.Telefone AS Fone, " +
+                              " Tb_Reserva.Id, DataInicio, DataFim " +
+                              " FROM Tb_Reserva " +
+                              " INNER JOIN Tb_Hospede ON Tb_Reserva.HospedeId = Tb_Hospede.Id " +
+                              " INNER JOIN Tb_Quarto ON Tb_Reserva.QuartoId = Tb_Quarto.Id " +
+                              " WHERE DataFim >= GETDATE() AND DataInicio <= GETDATE()";
+
+            var reservas = ListarReservas(querySql);
+            return reservas;
+        }
+
+        private List<Reserva> ListarReservas(string query)
+        {
+            var reservas = new List<Reserva>();
+            string querySql = query;
+
+            SqlCommand comandoSql = null;
+            SqlDataReader leitorDeDados = null;
+
             try
             {
                 comandoSql = DbSqlServer.ObterComandoSql(querySql, _conexao);
@@ -43,7 +68,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
                     Quarto quarto = InstanciarQuarto(leitorDeDados);
                     Hospede hospede = InstanciarHospede(leitorDeDados);
                     Reserva reserva = InstanciarReserva(leitorDeDados, hospede, quarto);
-                    
+
                     reservas.Add(reserva);
                 }
                 return reservas;
