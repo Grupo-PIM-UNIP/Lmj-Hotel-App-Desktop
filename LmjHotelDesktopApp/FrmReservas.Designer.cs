@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnListarReservasAtivas = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridListaDeQuartos = new System.Windows.Forms.DataGridView();
+            this.groupBoxListagemReservas = new System.Windows.Forms.GroupBox();
+            this.dataGridListagemReservas = new System.Windows.Forms.DataGridView();
             this.btnListarReservasInicioHoje = new System.Windows.Forms.Button();
             this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.btnListarTodasReservas = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListaDeQuartos)).BeginInit();
+            this.groupBoxListagemReservas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListagemReservas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,28 +66,28 @@
             this.btnListarReservasAtivas.Text = "Consultar reservas  com hospedagem ativa";
             this.btnListarReservasAtivas.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // groupBoxListagemReservas
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.dataGridListaDeQuartos);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(48, 287);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(761, 271);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Reservas";
+            this.groupBoxListagemReservas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBoxListagemReservas.Controls.Add(this.dataGridListagemReservas);
+            this.groupBoxListagemReservas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxListagemReservas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxListagemReservas.Location = new System.Drawing.Point(48, 287);
+            this.groupBoxListagemReservas.Name = "groupBoxListagemReservas";
+            this.groupBoxListagemReservas.Size = new System.Drawing.Size(761, 271);
+            this.groupBoxListagemReservas.TabIndex = 4;
+            this.groupBoxListagemReservas.TabStop = false;
+            this.groupBoxListagemReservas.Text = "Reservas";
             // 
-            // dataGridListaDeQuartos
+            // dataGridListagemReservas
             // 
-            this.dataGridListaDeQuartos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridListaDeQuartos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridListaDeQuartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridListaDeQuartos.Location = new System.Drawing.Point(31, 40);
-            this.dataGridListaDeQuartos.Name = "dataGridListaDeQuartos";
-            this.dataGridListaDeQuartos.Size = new System.Drawing.Size(698, 209);
-            this.dataGridListaDeQuartos.TabIndex = 2;
+            this.dataGridListagemReservas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridListagemReservas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridListagemReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridListagemReservas.Location = new System.Drawing.Point(31, 40);
+            this.dataGridListagemReservas.Name = "dataGridListagemReservas";
+            this.dataGridListagemReservas.Size = new System.Drawing.Size(698, 209);
+            this.dataGridListagemReservas.TabIndex = 2;
             // 
             // btnListarReservasInicioHoje
             // 
@@ -131,6 +131,7 @@
             this.btnListarTodasReservas.TabIndex = 7;
             this.btnListarTodasReservas.Text = "Consultar todas as reservas";
             this.btnListarTodasReservas.UseVisualStyleBackColor = false;
+            this.btnListarTodasReservas.Click += new System.EventHandler(this.btnListarTodasReservas_Click);
             // 
             // FrmReservas
             // 
@@ -143,14 +144,15 @@
             this.Controls.Add(this.btnListarTodasReservas);
             this.Controls.Add(this.btnVoltarTelaPrincipal);
             this.Controls.Add(this.btnListarReservasInicioHoje);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxListagemReservas);
             this.Controls.Add(this.btnListarReservasAtivas);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "FrmReservas";
             this.Text = "Listagem de quartos";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListaDeQuartos)).EndInit();
+            this.Load += new System.EventHandler(this.FrmReservas_Load);
+            this.groupBoxListagemReservas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListagemReservas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,8 +161,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListarReservasAtivas;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridListaDeQuartos;
+        private System.Windows.Forms.GroupBox groupBoxListagemReservas;
+        private System.Windows.Forms.DataGridView dataGridListagemReservas;
         private System.Windows.Forms.Button btnListarReservasInicioHoje;
         private System.Windows.Forms.Button btnVoltarTelaPrincipal;
         private System.Windows.Forms.Button btnListarTodasReservas;

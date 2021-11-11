@@ -45,12 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\Contratos\IQuartoDao.cs" />
+    <Compile Include="DAO\Contratos\IReservaDao.cs" />
     <Compile Include="DAO\DaoFactoryInstantiate.cs" />
     <Compile Include="DAO\Implementacoes\QuartoDao.cs" />
+    <Compile Include="DAO\Implementacoes\ReservaDao.cs" />
     <Compile Include="Models\Enums\EstadoQuarto.cs" />
+    <Compile Include="Models\Hospede.cs" />
     <Compile Include="Models\Quarto.cs" />
+    <Compile Include="Models\Reserva.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\QuartoService.cs" />
+    <Compile Include="Services\ReservaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

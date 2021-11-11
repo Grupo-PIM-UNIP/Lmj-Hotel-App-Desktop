@@ -12,6 +12,12 @@ namespace LmjHotelBusiness.Models
         {
         }
 
+        public Quarto(long id, string numero)
+        {
+            Id = id;
+            Numero = numero;
+        }
+
         public Quarto(long id, string numero, EstadoQuarto estadoQuarto)
         {
             Id = id;

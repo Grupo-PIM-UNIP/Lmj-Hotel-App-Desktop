@@ -10,5 +10,10 @@ namespace LmjHotelBusiness.DAO
         {
             return new QuartoDao(DbSqlServer.AbrirConexao());
         }
+
+        public static IReservaDao CreateReservadao()
+        {
+            return new ReservaDao(DbSqlServer.AbrirConexao());
+        }
     }
 }

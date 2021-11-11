@@ -32,6 +32,7 @@ namespace LmjHotelDesktopApp
         private void toolStripConsultarReservas_Click(object sender, EventArgs e)
         {
             var frmReservas = new FrmReservas();
+            frmReservas.SetReservaService(new ReservaService());
             frmReservas.ShowDialog();
         }
     }
