@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LmjHotelBusiness.Services;
 using System.Windows.Forms;
+using DatabaseConfig;
 
 namespace LmjHotelDesktopApp
 {
@@ -34,6 +35,12 @@ namespace LmjHotelDesktopApp
             var frmReservas = new FrmReservas();
             frmReservas.SetReservaService(new ReservaService());
             frmReservas.ShowDialog();
+        }
+
+        private void toolStripFecharAplicacao_Click(object sender, EventArgs e)
+        {
+            DbSqlServer.FecharConexao();
+            this.Close();
         }
     }
 }

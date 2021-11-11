@@ -34,7 +34,7 @@ namespace LmjHotelDesktopApp
             this.toolStripConsultarReservas = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripConsultarQuartos = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripFecharAplicacao = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace LmjHotelDesktopApp
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quartosToolStripMenuItem,
             this.sairToolStripMenuItem,
-            this.sairToolStripMenuItem1});
+            this.toolStripFecharAplicacao});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(768, 24);
@@ -62,7 +62,7 @@ namespace LmjHotelDesktopApp
             // toolStripConsultarReservas
             // 
             this.toolStripConsultarReservas.Name = "toolStripConsultarReservas";
-            this.toolStripConsultarReservas.Size = new System.Drawing.Size(180, 22);
+            this.toolStripConsultarReservas.Size = new System.Drawing.Size(125, 22);
             this.toolStripConsultarReservas.Text = "Consultar";
             this.toolStripConsultarReservas.Click += new System.EventHandler(this.toolStripConsultarReservas_Click);
             // 
@@ -77,15 +77,16 @@ namespace LmjHotelDesktopApp
             // ToolStripConsultarQuartos
             // 
             this.ToolStripConsultarQuartos.Name = "ToolStripConsultarQuartos";
-            this.ToolStripConsultarQuartos.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripConsultarQuartos.Size = new System.Drawing.Size(125, 22);
             this.ToolStripConsultarQuartos.Text = "Consultar";
             this.ToolStripConsultarQuartos.Click += new System.EventHandler(this.toolStripConsultarQuartos_Click);
             // 
-            // sairToolStripMenuItem1
+            // toolStripFecharAplicacao
             // 
-            this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem1.Text = "Sair";
+            this.toolStripFecharAplicacao.Name = "toolStripFecharAplicacao";
+            this.toolStripFecharAplicacao.Size = new System.Drawing.Size(38, 20);
+            this.toolStripFecharAplicacao.Text = "Sair";
+            this.toolStripFecharAplicacao.Click += new System.EventHandler(this.toolStripFecharAplicacao_Click);
             // 
             // label1
             // 
@@ -128,7 +129,7 @@ namespace LmjHotelDesktopApp
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripConsultarReservas;
         private System.Windows.Forms.ToolStripMenuItem ToolStripConsultarQuartos;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripFecharAplicacao;
         private System.Windows.Forms.Label label1;
     }
 }

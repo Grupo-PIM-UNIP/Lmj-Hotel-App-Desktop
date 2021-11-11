@@ -12,7 +12,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
 {
     public class ReservaDao : IReservaDao
     {
-        private SqlConnection _conexao;
+        private readonly SqlConnection _conexao;
 
         public ReservaDao(SqlConnection conexao)
         {

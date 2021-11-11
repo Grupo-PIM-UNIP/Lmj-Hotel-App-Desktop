@@ -104,6 +104,10 @@
     <Content Include="Resources\images\logotipo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseConfig\DatabaseConfig.csproj">
+      <Project>{07473ee8-e715-40bc-82fb-9e1ca44744ed}</Project>
+      <Name>DatabaseConfig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LmjHotelBusiness\LmjHotelBusiness.csproj">
       <Project>{3b4c5253-045a-4848-af39-9c04f12b19ab}</Project>
       <Name>LmjHotelBusiness</Name>
