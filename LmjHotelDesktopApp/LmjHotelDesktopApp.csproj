@@ -93,5 +93,11 @@
     <Content Include="Resources\images\hotel.png" />
     <Content Include="Resources\images\logotipo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LmjHotelBusiness\LmjHotelBusiness.csproj">
+      <Project>{3b4c5253-045a-4848-af39-9c04f12b19ab}</Project>
+      <Name>LmjHotelBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

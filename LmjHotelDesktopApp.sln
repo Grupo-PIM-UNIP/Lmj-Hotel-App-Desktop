@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LmjHotelDesktopApp", "LmjHotelDesktopApp\LmjHotelDesktopApp.csproj", "{F1C984E8-0D66-4B75-9546-6EB0476415B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConfig", "DatabaseConfig\DatabaseConfig.csproj", "{07473EE8-E715-40BC-82FB-9E1CA44744ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LmjHotelBusiness", "LmjHotelBusiness\LmjHotelBusiness.csproj", "{3B4C5253-045A-4848-AF39-9C04F12B19AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F1C984E8-0D66-4B75-9546-6EB0476415B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C984E8-0D66-4B75-9546-6EB0476415B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C984E8-0D66-4B75-9546-6EB0476415B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07473EE8-E715-40BC-82FB-9E1CA44744ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07473EE8-E715-40BC-82FB-9E1CA44744ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07473EE8-E715-40BC-82FB-9E1CA44744ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07473EE8-E715-40BC-82FB-9E1CA44744ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4C5253-045A-4848-AF39-9C04F12B19AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4C5253-045A-4848-AF39-9C04F12B19AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4C5253-045A-4848-AF39-9C04F12B19AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4C5253-045A-4848-AF39-9C04F12B19AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

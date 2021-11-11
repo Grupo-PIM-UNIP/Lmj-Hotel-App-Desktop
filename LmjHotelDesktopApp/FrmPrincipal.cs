@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LmjHotelBusiness.Services;
 using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
@@ -20,6 +21,7 @@ namespace LmjHotelDesktopApp
         private void ListarQuartosDisponiveis(object sender, EventArgs e)
         {
             var frmQuartos = new FrmQuartos();
+            frmQuartos.SetQuartoService(new QuartoService());
             frmQuartos.ShowDialog();
         }
 
