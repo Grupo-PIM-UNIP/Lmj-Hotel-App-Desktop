@@ -5,6 +5,7 @@ namespace LmjHotelBusiness.DAO.Contratos
 {
     public interface IQuartoDao
     {
+        List<Quarto> ListarQuartosOcupados();
         List<Quarto> ListarQuartosDisponiveis();
     }
 }

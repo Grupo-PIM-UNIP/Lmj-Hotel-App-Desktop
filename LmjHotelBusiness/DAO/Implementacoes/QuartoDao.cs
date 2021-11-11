@@ -9,7 +9,6 @@ namespace LmjHotelBusiness.DAO.Implementacoes
 {
     public class QuartoDao : IQuartoDao
     {
-        public List<Quarto> list { get; set; } = new List<Quarto>();
         private readonly SqlConnection _conexao;
 
         public QuartoDao(SqlConnection conexao)
@@ -17,13 +16,30 @@ namespace LmjHotelBusiness.DAO.Implementacoes
             _conexao = conexao;
         }
 
+        public List<Quarto> ListarQuartosOcupados()
+        {
+            string querySql = "SELECT * " +
+                             "FROM Tb_Quarto " +
+                             "Where EstadoDoQuarto = 1";
+            var quartos = ListarQuartos(querySql);
+            return quartos;
+        }
+
         public List<Quarto> ListarQuartosDisponiveis()
         {
+            string querySql = "SELECT * " +
+                              "FROM Tb_Quarto " +
+                              "Where EstadoDoQuarto = 2";
+            var quartos = ListarQuartos(querySql);
+            return quartos;
+        }
+
+        private List<Quarto> ListarQuartos(string query)
+        {
+            var quartos = new List<Quarto>();
             SqlCommand comandoSql = null;
             SqlDataReader leitorDeDados = null;
-            string querySql = "SELECT * " +
-                              " FROM Tb_Quarto " +
-                              " WHERE EstadoDoQuarto = 2";
+            string querySql = query;
             try
             {
                 comandoSql = DbSqlServer.ObterComandoSql(querySql, _conexao);
@@ -35,9 +51,9 @@ namespace LmjHotelBusiness.DAO.Implementacoes
                     string numero = leitorDeDados.GetString(1);
                     EstadoQuarto estado = (EstadoQuarto)leitorDeDados.GetInt32(2);
 
-                    list.Add(new Quarto(id, numero, estado));
+                    quartos.Add(new Quarto(id, numero, estado));
                 }
-                return list;
+                return quartos;
             }
             catch (SqlException e)
             {

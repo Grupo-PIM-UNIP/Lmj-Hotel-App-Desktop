@@ -32,6 +32,8 @@
             this.btnListaQuartosDisponiveis = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridListaDeQuartos = new System.Windows.Forms.DataGridView();
+            this.btnListarQuartosOcupados = new System.Windows.Forms.Button();
+            this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListaDeQuartos)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             this.btnListaQuartosDisponiveis.FlatAppearance.BorderSize = 0;
             this.btnListaQuartosDisponiveis.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListaQuartosDisponiveis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnListaQuartosDisponiveis.Location = new System.Drawing.Point(540, 204);
+            this.btnListaQuartosDisponiveis.Location = new System.Drawing.Point(499, 219);
             this.btnListaQuartosDisponiveis.Name = "btnListaQuartosDisponiveis";
             this.btnListaQuartosDisponiveis.Size = new System.Drawing.Size(150, 51);
             this.btnListaQuartosDisponiveis.TabIndex = 2;
@@ -70,9 +72,9 @@
             this.groupBox1.Controls.Add(this.dataGridListaDeQuartos);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(209, 270);
+            this.groupBox1.Location = new System.Drawing.Point(262, 287);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 271);
+            this.groupBox1.Size = new System.Drawing.Size(387, 271);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de quartos";
@@ -82,10 +84,40 @@
             this.dataGridListaDeQuartos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridListaDeQuartos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridListaDeQuartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridListaDeQuartos.Location = new System.Drawing.Point(34, 34);
+            this.dataGridListaDeQuartos.Location = new System.Drawing.Point(31, 40);
             this.dataGridListaDeQuartos.Name = "dataGridListaDeQuartos";
-            this.dataGridListaDeQuartos.Size = new System.Drawing.Size(459, 209);
+            this.dataGridListaDeQuartos.Size = new System.Drawing.Size(322, 209);
             this.dataGridListaDeQuartos.TabIndex = 2;
+            // 
+            // btnListarQuartosOcupados
+            // 
+            this.btnListarQuartosOcupados.BackColor = System.Drawing.Color.Silver;
+            this.btnListarQuartosOcupados.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnListarQuartosOcupados.FlatAppearance.BorderSize = 0;
+            this.btnListarQuartosOcupados.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarQuartosOcupados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnListarQuartosOcupados.Location = new System.Drawing.Point(317, 219);
+            this.btnListarQuartosOcupados.Name = "btnListarQuartosOcupados";
+            this.btnListarQuartosOcupados.Size = new System.Drawing.Size(150, 51);
+            this.btnListarQuartosOcupados.TabIndex = 5;
+            this.btnListarQuartosOcupados.Text = "Verificar quartos ocupados";
+            this.btnListarQuartosOcupados.UseVisualStyleBackColor = false;
+            this.btnListarQuartosOcupados.Click += new System.EventHandler(this.btnListarQuartosOcupados_Click);
+            // 
+            // btnVoltarTelaPrincipal
+            // 
+            this.btnVoltarTelaPrincipal.BackColor = System.Drawing.Color.Silver;
+            this.btnVoltarTelaPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnVoltarTelaPrincipal.FlatAppearance.BorderSize = 0;
+            this.btnVoltarTelaPrincipal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltarTelaPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVoltarTelaPrincipal.Location = new System.Drawing.Point(499, 118);
+            this.btnVoltarTelaPrincipal.Name = "btnVoltarTelaPrincipal";
+            this.btnVoltarTelaPrincipal.Size = new System.Drawing.Size(150, 51);
+            this.btnVoltarTelaPrincipal.TabIndex = 6;
+            this.btnVoltarTelaPrincipal.Text = "Voltar a tela principal";
+            this.btnVoltarTelaPrincipal.UseVisualStyleBackColor = false;
+            this.btnVoltarTelaPrincipal.Click += new System.EventHandler(this.btnVoltarTelaPrincipal_Click);
             // 
             // FrmQuartos
             // 
@@ -94,7 +126,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::LmjHotelDesktopApp.Properties.Resources.logotipo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(837, 553);
+            this.ClientSize = new System.Drawing.Size(837, 570);
+            this.Controls.Add(this.btnVoltarTelaPrincipal);
+            this.Controls.Add(this.btnListarQuartosOcupados);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnListaQuartosDisponiveis);
             this.Controls.Add(this.label1);
@@ -114,5 +148,7 @@
         private System.Windows.Forms.Button btnListaQuartosDisponiveis;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridListaDeQuartos;
+        private System.Windows.Forms.Button btnListarQuartosOcupados;
+        private System.Windows.Forms.Button btnVoltarTelaPrincipal;
     }
 }
