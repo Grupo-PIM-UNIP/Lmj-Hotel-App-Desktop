@@ -7,5 +7,6 @@ namespace LmjHotelBusiness.DAO.Contratos
     {
         List<Reserva> ListarTodasReservas();
         List<Reserva> ListarReservasAtivas();
+        List<Reserva> ListarReservasQueIniciamHoje();
     }
 }

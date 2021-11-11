@@ -47,6 +47,12 @@ namespace LmjHotelDesktopApp
             MontarListagemNoDateGridView(reservas);
         }
 
+        private void btnListarReservasInicioHoje_Click(object sender, EventArgs e)
+        {
+            var reservas = _reservaService.ListarReservasQueIniciamHoje();
+            MontarListagemNoDateGridView(reservas);
+        }
+
         private void MontarListagemNoDateGridView(List<Reserva> reservas)
         {
             var dataGridVazio = VerificarSeDataGridEstaVazio();

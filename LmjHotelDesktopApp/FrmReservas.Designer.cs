@@ -103,6 +103,7 @@
             this.btnListarReservasInicioHoje.TabIndex = 5;
             this.btnListarReservasInicioHoje.Text = "Consultar reservas que iniciam hoje";
             this.btnListarReservasInicioHoje.UseVisualStyleBackColor = false;
+            this.btnListarReservasInicioHoje.Click += new System.EventHandler(this.btnListarReservasInicioHoje_Click);
             // 
             // btnVoltarTelaPrincipal
             // 
