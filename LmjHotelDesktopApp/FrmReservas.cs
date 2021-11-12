@@ -2,12 +2,6 @@
 using LmjHotelBusiness.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
@@ -37,20 +31,56 @@ namespace LmjHotelDesktopApp
 
         private void btnListarTodasReservas_Click(object sender, EventArgs e)
         {
-            var reservas = _reservaService.ListaTodasReservas();
-            MontarListagemNoDateGridView(reservas);
+            try
+            {
+                var reservas = _reservaService.ListaTodasReservas();
+                MontarListagemNoDateGridView(reservas);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(
+                    "" + ex.Message,
+                    "Error!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
 
         private void btnListarReservasAtivas_Click(object sender, EventArgs e)
         {
-            var reservas = _reservaService.ListaReservasAtivas();
-            MontarListagemNoDateGridView(reservas);
+            try
+            {
+                var reservas = _reservaService.ListaReservasAtivas();
+                MontarListagemNoDateGridView(reservas);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(
+                    "" + ex.Message,
+                    "Error!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
 
         private void btnListarReservasInicioHoje_Click(object sender, EventArgs e)
         {
-            var reservas = _reservaService.ListarReservasQueIniciamHoje();
-            MontarListagemNoDateGridView(reservas);
+            try
+            {
+                var reservas = _reservaService.ListarReservasQueIniciamHoje();
+                MontarListagemNoDateGridView(reservas);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show(
+                    "" + ex.Message,
+                    "Error!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
 
         private void MontarListagemNoDateGridView(List<Reserva> reservas)

@@ -1,12 +1,9 @@
-﻿using LmjHotelBusiness.DAO.Contratos;
+﻿using DatabaseConfig;
+using LmjHotelBusiness.DAO.Contratos;
 using LmjHotelBusiness.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using DatabaseConfig;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LmjHotelBusiness.DAO.Implementacoes
 {
@@ -44,7 +41,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
                               " FROM Tb_Reserva " +
                               " INNER JOIN Tb_Hospede ON Tb_Reserva.HospedeId = Tb_Hospede.Id " +
                               " INNER JOIN Tb_Quarto ON Tb_Reserva.QuartoId = Tb_Quarto.Id " +
-                              " WHERE DataFim >= GETDATE()";
+                              " WHERE DataInicio <= GETDATE() AND DataFim >= GETDATE()";
 
             var reservas = ListarReservas(querySql);
             return reservas;

@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnListaQuartosDisponiveis = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxListagemDeQuartos = new System.Windows.Forms.GroupBox();
             this.dataGridListaDeQuartos = new System.Windows.Forms.DataGridView();
             this.btnListarQuartosOcupados = new System.Windows.Forms.Button();
             this.btnVoltarTelaPrincipal = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxListagemDeQuartos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListaDeQuartos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             // 
             // btnListaQuartosDisponiveis
             // 
+            this.btnListaQuartosDisponiveis.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListaQuartosDisponiveis.BackColor = System.Drawing.Color.Silver;
             this.btnListaQuartosDisponiveis.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnListaQuartosDisponiveis.FlatAppearance.BorderSize = 0;
@@ -66,18 +67,18 @@
             this.btnListaQuartosDisponiveis.UseVisualStyleBackColor = false;
             this.btnListaQuartosDisponiveis.Click += new System.EventHandler(this.btnListaQuartosDisponiveis_Click);
             // 
-            // groupBox1
+            // groupBoxListagemDeQuartos
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.dataGridListaDeQuartos);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(262, 287);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 271);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de quartos";
+            this.groupBoxListagemDeQuartos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBoxListagemDeQuartos.Controls.Add(this.dataGridListaDeQuartos);
+            this.groupBoxListagemDeQuartos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxListagemDeQuartos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxListagemDeQuartos.Location = new System.Drawing.Point(262, 287);
+            this.groupBoxListagemDeQuartos.Name = "groupBoxListagemDeQuartos";
+            this.groupBoxListagemDeQuartos.Size = new System.Drawing.Size(387, 271);
+            this.groupBoxListagemDeQuartos.TabIndex = 4;
+            this.groupBoxListagemDeQuartos.TabStop = false;
+            this.groupBoxListagemDeQuartos.Text = "Lista de quartos";
             // 
             // dataGridListaDeQuartos
             // 
@@ -91,6 +92,7 @@
             // 
             // btnListarQuartosOcupados
             // 
+            this.btnListarQuartosOcupados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListarQuartosOcupados.BackColor = System.Drawing.Color.Silver;
             this.btnListarQuartosOcupados.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnListarQuartosOcupados.FlatAppearance.BorderSize = 0;
@@ -106,6 +108,7 @@
             // 
             // btnVoltarTelaPrincipal
             // 
+            this.btnVoltarTelaPrincipal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVoltarTelaPrincipal.BackColor = System.Drawing.Color.Silver;
             this.btnVoltarTelaPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnVoltarTelaPrincipal.FlatAppearance.BorderSize = 0;
@@ -129,14 +132,14 @@
             this.ClientSize = new System.Drawing.Size(837, 570);
             this.Controls.Add(this.btnVoltarTelaPrincipal);
             this.Controls.Add(this.btnListarQuartosOcupados);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxListagemDeQuartos);
             this.Controls.Add(this.btnListaQuartosDisponiveis);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "FrmQuartos";
             this.Text = "Listagem de quartos";
             this.Load += new System.EventHandler(this.FrmQuartos_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxListagemDeQuartos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridListaDeQuartos)).EndInit();
             this.ResumeLayout(false);
 
@@ -146,7 +149,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListaQuartosDisponiveis;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxListagemDeQuartos;
         private System.Windows.Forms.DataGridView dataGridListaDeQuartos;
         private System.Windows.Forms.Button btnListarQuartosOcupados;
         private System.Windows.Forms.Button btnVoltarTelaPrincipal;

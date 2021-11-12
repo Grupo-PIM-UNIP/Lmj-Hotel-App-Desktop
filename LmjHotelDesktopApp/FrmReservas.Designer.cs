@@ -54,6 +54,7 @@
             // 
             // btnListarReservasAtivas
             // 
+            this.btnListarReservasAtivas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListarReservasAtivas.BackColor = System.Drawing.Color.Silver;
             this.btnListarReservasAtivas.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnListarReservasAtivas.FlatAppearance.BorderSize = 0;
@@ -92,6 +93,7 @@
             // 
             // btnListarReservasInicioHoje
             // 
+            this.btnListarReservasInicioHoje.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListarReservasInicioHoje.BackColor = System.Drawing.Color.Silver;
             this.btnListarReservasInicioHoje.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnListarReservasInicioHoje.FlatAppearance.BorderSize = 0;
@@ -107,6 +109,7 @@
             // 
             // btnVoltarTelaPrincipal
             // 
+            this.btnVoltarTelaPrincipal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnVoltarTelaPrincipal.BackColor = System.Drawing.Color.Silver;
             this.btnVoltarTelaPrincipal.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnVoltarTelaPrincipal.FlatAppearance.BorderSize = 0;
@@ -122,6 +125,7 @@
             // 
             // btnListarTodasReservas
             // 
+            this.btnListarTodasReservas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListarTodasReservas.BackColor = System.Drawing.Color.Silver;
             this.btnListarTodasReservas.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnListarTodasReservas.FlatAppearance.BorderSize = 0;

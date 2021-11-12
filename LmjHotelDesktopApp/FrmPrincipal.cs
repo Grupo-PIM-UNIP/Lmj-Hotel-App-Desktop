@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DatabaseConfig;
 using LmjHotelBusiness.Services;
+using System;
 using System.Windows.Forms;
-using DatabaseConfig;
 
 namespace LmjHotelDesktopApp
 {
@@ -39,8 +32,19 @@ namespace LmjHotelDesktopApp
 
         private void toolStripFecharAplicacao_Click(object sender, EventArgs e)
         {
-            DbSqlServer.FecharConexao();
-            this.Close();
+            try
+            {
+                DbSqlServer.FecharConexao();
+                this.Close();
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show("" + ex.Message,
+                    "Error!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
     }
 }

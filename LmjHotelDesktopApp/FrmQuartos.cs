@@ -1,15 +1,7 @@
-﻿using LmjHotelBusiness.Services;
-using LmjHotelBusiness.DAO;
-using LmjHotelBusiness.DAO.Contratos;
-using LmjHotelBusiness.Models;
+﻿using LmjHotelBusiness.Models;
+using LmjHotelBusiness.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
@@ -50,21 +42,33 @@ namespace LmjHotelDesktopApp
         private void ListarQuartos(Button button)
         {
             List<Quarto> quartos = new List<Quarto>();
-            if (button == btnListaQuartosDisponiveis)
-            {
-                quartos = _quartoService.ListarQuartosDisponiveis();
-            }
-            else
-            {
-                quartos = _quartoService.ListarQuartosOcupados();
-            }
 
-            dataGridListaDeQuartos.DataSource = quartos;
-            DataGridViewColumn[] columns = new DataGridViewColumn[] { dataGridListaDeQuartos.Columns[0] };
-            DeixarColunaInvisivelDGV(columns);
+            try
+            {
+                if (button == btnListaQuartosDisponiveis)
+                {
+                    quartos = _quartoService.ListarQuartosDisponiveis();
+                }
+                else
+                {
+                    quartos = _quartoService.ListarQuartosOcupados();
+                }
 
-            string[] cabecalhos = new string[] { "Número", "Status" };
-            DefinirCabecalhosPersonalizadosDGV(cabecalhos);
+                dataGridListaDeQuartos.DataSource = quartos;
+                DataGridViewColumn[] columns = new DataGridViewColumn[] { dataGridListaDeQuartos.Columns[0] };
+                DeixarColunaInvisivelDGV(columns);
+
+                string[] cabecalhos = new string[] { "Número", "Status" };
+                DefinirCabecalhosPersonalizadosDGV(cabecalhos);
+            }
+            catch (ApplicationException ex)
+            {
+                MessageBox.Show("" + ex.Message,
+                    "Error!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
         }
 
         private void DeixarColunaInvisivelDGV(DataGridViewColumn[] coluna)
