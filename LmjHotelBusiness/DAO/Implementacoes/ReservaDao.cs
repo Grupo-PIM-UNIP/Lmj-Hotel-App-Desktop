@@ -7,8 +7,10 @@ using System.Data.SqlClient;
 
 namespace LmjHotelBusiness.DAO.Implementacoes
 {
+    //A classe ReservaDao implementa os contratos estabelecidos pela interface IReservaDao
     public class ReservaDao : IReservaDao
     {
+        //Declarando dependência de ReservaDao com a classe SqlConnection
         private readonly SqlConnection _conexao;
 
         public ReservaDao(SqlConnection conexao)
@@ -57,12 +59,16 @@ namespace LmjHotelBusiness.DAO.Implementacoes
                               " FROM Tb_Reserva " +
                               " INNER JOIN Tb_Hospede ON Tb_Reserva.HospedeId = Tb_Hospede.Id " +
                               " INNER JOIN Tb_Quarto ON Tb_Reserva.QuartoId = Tb_Quarto.Id " +
-                              " WHERE DataInicio = GETDATE()";
+                              " WHERE convert(date, convert(varchar(10), DataInicio, 102)) = convert(date, GETDATE())";
 
             var reservas = ListarReservas(querySql);
             return reservas;
         }
 
+        /* Método genérico de listagem de reservas, onde todas as listagens de reservas acima tem 
+           praticamente a mesma implementação com exceção das querys SQL que são diferentes. Sendo assim
+           os métodos acima passam uma query como parâmetro para o método ListarReservas e este por sua vez
+           realiza operações de acesso ao banco de dados SQL Server */
         private List<Reserva> ListarReservas(string query)
         {
             var reservas = new List<Reserva>();
@@ -96,6 +102,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
             }
         }
 
+        //Método auxiliar de instanciação de quarto usado no método de listar reservas.
         private Quarto InstanciarQuarto(SqlDataReader leitorDeDados)
         {
             long id = leitorDeDados.GetInt64(0);
@@ -104,6 +111,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
             return new Quarto(id, numeroDoQuarto);
         }
 
+        //Método auxiliar de instanciação de hóspede usado no método de listar reservas.
         private Hospede InstanciarHospede(SqlDataReader leitorDeDados)
         {
             long id = leitorDeDados.GetInt64(2);
@@ -114,6 +122,7 @@ namespace LmjHotelBusiness.DAO.Implementacoes
             return new Hospede(id, nome, sobrenome, telefone);
         }
 
+        //Método auxiliar de instanciação de reserva usado no método de listar reservas.
         private Reserva InstanciarReserva(SqlDataReader leitorDeDados, Hospede hospede, Quarto quarto)
         {
             long id = leitorDeDados.GetInt64(6);

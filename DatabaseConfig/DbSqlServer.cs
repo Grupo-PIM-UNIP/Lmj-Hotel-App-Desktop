@@ -2,9 +2,13 @@
 
 namespace DatabaseConfig
 {
+    //Classe responsável por abri e fechar conexão com SQL Server, além de obter comando SQL. 
     public class DbSqlServer
     {
         private static SqlConnection connectionDatabase = null;
+
+        /* Essa String de conexão funciona apenas localmente no meu PC, logo é necessária substituí-la
+          pela sua string de conexão, para que consiga usar essa aplicação */
         private const string strConexao = "Integrated Security=SSPI;" +
                                            "Persist Security Info=False;" +
                                            "Initial Catalog=LmjHotelDatabase;" +

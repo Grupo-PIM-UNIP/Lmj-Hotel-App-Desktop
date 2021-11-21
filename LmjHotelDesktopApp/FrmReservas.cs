@@ -6,8 +6,12 @@ using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
 {
+    /* Como os formulários do Windows Form tem suas próprias Controllers disponíveis em suas estruturas,
+       utilizamos essa classe para interagir com a classe de ReservaService do LmjHotelBusiness,
+       receber as operações correspondentes as regras de negócio impostas */
     public partial class FrmReservas : Form
     {
+        //Declarando a dependência com a classe ReservaService
         private ReservaService _reservaService;
 
         public FrmReservas()
@@ -15,6 +19,7 @@ namespace LmjHotelDesktopApp
             InitializeComponent();
         }
 
+        //Injetando a dependência com a classe ReservaService manualmente
         public void SetReservaService(ReservaService reservaService)
         {
             _reservaService = reservaService;
@@ -83,6 +88,8 @@ namespace LmjHotelDesktopApp
             }
         }
 
+        /* Método Genérico usado por todos os métodos de listagem de reservas, na qual tem a mesma,
+           estrutura, mudando apenas as informações que serão exibidas por estes. */
         private void MontarListagemNoDateGridView(List<Reserva> reservas)
         {
             var dataGridVazio = VerificarSeDataGridEstaVazio();
@@ -105,6 +112,7 @@ namespace LmjHotelDesktopApp
             return false;
         }
 
+        //Definição das colunas do DataGridView do Windows Form.
         private void DefinirColunasDataGrid()
         {
             dataGridListagemReservas.Columns.Add("DataInicio", "Início");
@@ -117,6 +125,7 @@ namespace LmjHotelDesktopApp
             RegularColunaDataGrid(colunas);
         }
 
+        //Método usado para aumentar tamanho de uma ou mais coluna específica conforme o seu conteúdo.
         private void RegularColunaDataGrid(DataGridViewColumn[] colunas)
         {
             for (int i = 0; i < colunas.Length; i++)
@@ -125,7 +134,7 @@ namespace LmjHotelDesktopApp
             }
         }
 
-
+        //Definição das linhas do DataGridView do Windows Form.
         private void DefinirLinhasDataGrid(List<Reserva> reservas)
         {
             foreach (var item in reservas)

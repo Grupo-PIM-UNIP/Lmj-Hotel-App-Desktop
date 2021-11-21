@@ -7,8 +7,10 @@ using LmjHotelBusiness.Models.Enums;
 
 namespace LmjHotelBusiness.DAO.Implementacoes
 {
+    //A classe QuartoDao implementa os contratos estabelecidos pela interface IQuartoDao
     public class QuartoDao : IQuartoDao
     {
+        //Declarando dependência de QuartoDao com a classe SqlConnection
         private readonly SqlConnection _conexao;
 
         public QuartoDao(SqlConnection conexao)
@@ -34,6 +36,10 @@ namespace LmjHotelBusiness.DAO.Implementacoes
             return quartos;
         }
 
+        /* Método genérico de listagem de quartos, onde todas as listagens de quarto acima tem 
+           praticamente a mesma implementação com exceção das querys SQL que são diferentes. Sendo assim
+           os métodos acima passam uma query como parâmetro para o método ListarQuartos e este por sua vez
+           realiza operações de acesso ao banco de dados SQL Server */
         private List<Quarto> ListarQuartos(string query)
         {
             var quartos = new List<Quarto>();

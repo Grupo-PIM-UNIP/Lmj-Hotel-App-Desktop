@@ -6,8 +6,12 @@ using System.Windows.Forms;
 
 namespace LmjHotelDesktopApp
 {
+    /* Como os formulários do Windows Form tem suas próprias Controllers disponíveis em suas estruturas,
+       utilizamos essa classe para interagir com a classe de QuartoService do LmjHotelBusiness,
+       receber as operações correspondentes as regras de negócio impostas */
     public partial class FrmQuartos : Form
     {
+        //Declarando a dependência com a classe ReservaService
         private QuartoService _quartoService;
 
         public FrmQuartos()
@@ -15,6 +19,7 @@ namespace LmjHotelDesktopApp
             InitializeComponent();
         }
 
+        //Injetando a dependência com a classe QuartoService manualmente
         public void SetQuartoService(QuartoService quartoService)
         {
             _quartoService = quartoService;
@@ -39,6 +44,8 @@ namespace LmjHotelDesktopApp
             ListarQuartos(btnListarQuartosOcupados);
         }
 
+        /* Método Genérico usado por todos os métodos de listagem de quartos, na qual tem a mesma,
+           estrutura, mudando apenas as informações que serão exibidas por estes. */
         private void ListarQuartos(Button button)
         {
             List<Quarto> quartos = new List<Quarto>();

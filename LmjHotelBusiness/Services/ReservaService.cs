@@ -5,8 +5,10 @@ using System.Collections.Generic;
 
 namespace LmjHotelBusiness.Services
 {
+    // Classe de serviço responsável pelas regras de negócio do sistema
     public class ReservaService
     {
+        //Injetando a dependência com a interface IReservaDao
         private readonly IReservaDao reservaDao = DaoFactoryInstantiate.CreateReservadao();
 
         public List<Reserva> ListaTodasReservas()

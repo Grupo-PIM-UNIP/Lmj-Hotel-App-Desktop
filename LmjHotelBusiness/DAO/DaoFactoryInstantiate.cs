@@ -4,6 +4,8 @@ using LmjHotelBusiness.DAO.Implementacoes;
 
 namespace LmjHotelBusiness.DAO
 {
+    /* A classe DaoFactoryInstantiate instancia realiza a injeção de dependência das intefaces
+       com suas respectivas implementações */
     public class DaoFactoryInstantiate
     {
         public static IQuartoDao CreateQuartoDao()

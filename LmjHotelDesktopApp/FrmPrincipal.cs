@@ -19,6 +19,8 @@ namespace LmjHotelDesktopApp
         private void toolStripConsultarQuartos_Click(object sender, EventArgs e)
         {
             var frmQuartos = new FrmQuartos();
+
+            //Abre instância de QuartoService toda vez que este formulário for aberto.
             frmQuartos.SetQuartoService(new QuartoService());
             frmQuartos.ShowDialog();
         }
@@ -26,6 +28,8 @@ namespace LmjHotelDesktopApp
         private void toolStripConsultarReservas_Click(object sender, EventArgs e)
         {
             var frmReservas = new FrmReservas();
+
+            //Abre instância de ReservaService toda vez que este formulário for aberto.
             frmReservas.SetReservaService(new ReservaService());
             frmReservas.ShowDialog();
         }
